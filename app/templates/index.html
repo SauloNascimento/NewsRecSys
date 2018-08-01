@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Recomendação de notícias</h1>
+  <p class="lead">Demo do Lab3 da disciplina SRI 2018.1 - UFCG</p>
+  <p class="lead">
+      Dentro de um conjunto de 8716 noticias, 80% delas foram usadas para treinar
+      o modelo pelo algoritimo K-NN, as demais noticias são usadas para realizar
+      consultas aqui.
+  </p>
+
+  <form method="POST">
+    <label for="selId">Escolha uma Noticia:</label>
+    <select class="form-control" name="selId">
+        {% for opt in valdocs %}
+            <option value="{{ opt[0] }}">{{ opt[0] }} - {{ opt[1] }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+  </form>
+</div>
+{% endblock %}
